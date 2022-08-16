@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane id="AnchorPane" fx:id="bretour" prefHeight="610.0" prefWidth="737.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cosmeticelif.vControl.ProduitControler">
+   <children>
+      <Pane prefHeight="68.0" prefWidth="768.0" style="-fx-background-color: #f2e6dd;" stylesheets="@../Stylee1.css">
+         <children>
+            <ImageView fitHeight="73.0" fitWidth="201.0" layoutX="-2.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/cosmetic_rose.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <TableView fx:id="table" layoutX="93.0" layoutY="214.0" prefHeight="272.0" prefWidth="567.0">
+        <columns>
+          <TableColumn id="id" fx:id="id" prefWidth="47.0" text="ID" />
+          <TableColumn id="reference" fx:id="reference" prefWidth="108.0" text="Reference" />
+            <TableColumn id="nom" fx:id="nom" prefWidth="100.0" text="Nom" />
+            <TableColumn id="marque" fx:id="marque" prefWidth="100.0" text="Marque" />
+            <TableColumn id="categorie" fx:id="categorie" prefWidth="75.0" text="Categorie" />
+            <TableColumn id="sexe" fx:id="sexe" prefWidth="57.0" text="Sexe" />
+            <TableColumn id="prix" fx:id="prix" prefWidth="78.0" text="Prix" />
+        </columns>
+      </TableView>
+      <Pane layoutY="542.0" prefHeight="68.0" prefWidth="768.0" style="-fx-background-color: #f2e6dd;" stylesheets="@../Stylee1.css" />
+   <TextField fx:id="txtid" focusTraversable="false" layoutX="162.0" layoutY="79.0" opacity="0.8" prefHeight="50.0" prefWidth="214.0" promptText="Chercher par id ..">
+                  </TextField>
+      <Pane layoutX="384.0" layoutY="79.0" prefHeight="50.0" prefWidth="49.0" style="-fx-background-color: #f2e6dd;">
+         <children>
+            <ImageView fitHeight="31.0" fitWidth="37.0" layoutX="9.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/chercher.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Button fx:id="bajouter" layoutX="136.0" layoutY="158.0" mnemonicParsing="false" text="Ajouter" />
+      <Button fx:id="bmodifier" layoutX="235.0" layoutY="158.0" mnemonicParsing="false" text="Modifier" />
+      <Button fx:id="bsupprimer" layoutX="325.0" layoutY="158.0" mnemonicParsing="false" text="Supprimer" />   </children>
+</AnchorPane>
