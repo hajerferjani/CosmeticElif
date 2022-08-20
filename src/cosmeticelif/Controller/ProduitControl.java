@@ -57,7 +57,31 @@ public class ProduitControl {
        return product;
    }
     
+    public void insert(Produit  product)
+    {
+        try {
+            state = ConnectionDB.openConnection().createStatement();               
+            state.executeUpdate("INSERT INTO `produit` ( `id_produit`, `reference_produit`, `nom_produit`, `marque_produit`, `categorie_produit`, `sexe`, `prix_produit`) VALUES ( '" + product.getId_produit() + "','" + product.getReference_produit() +"','"+ product.getNom_produit() + "','"+product.getMarque_produit()+"','"+product.getCategorie_produit()+"','"+product.getSexe()+"','"+product.getPrix_produit()+"')");
+            //state.executeUpdate("INSERT INTO `produit` ( `id_produit`, `reference_produit`, `nom_produit`, `marque_produit`, `categorie_produit`, `sexe`, `prix_produit`) VALUES (  "+product.getId_produit()+","+product.getReference_produit()+","+product.getNom_produit()+",'"+product.getMarque_produit()+"' ,"+product.getCategorie_produit()+"' ,"+product.getSexe()+"' ,"+product.getPrix_produit());
+           // state.executeUpdate("insert into Produit(id_produit,reference_produit,nom_produit,marque_produit,categorie_produit,sexe,prix_produit) values(?,?,?,?,?,?,?)");
+            ConnectionDB.closeConnection();
+        } catch (SQLException ex) {
+            ConnectionDB.closeConnection();
+            Logger.getLogger(ProduitControl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
+    public void update(Produit product)
+    {
+        try {
+            state = ConnectionDB.openConnection().createStatement();
+            state.executeUpdate("UPDATE produit set   `reference_produit` = "+product.getReference_produit() +", `nom_produit` = " + product.getNom_produit() +", `marque_produit` = "+"'"+product.getMarque_produit()+"'"+", `categorie_produit` = "+product.getCategorie_produit()+", `sexe` = "+product.getSexe()+", `prix_produit` = "+product.getPrix_produit()+" WHERE id_produit = "+product.getId_produit() );
+            ConnectionDB.closeConnection();
+        } catch (SQLException ex) {
+            Logger.getLogger(ProduitControl.class.getName()).log(Level.SEVERE, null, ex);
+            ConnectionDB.closeConnection();
+        }
+    }
     
     public void delete(int id)
     {       
