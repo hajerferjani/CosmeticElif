@@ -74,6 +74,7 @@ public class ProduitControler implements Initializable {
     @FXML
     private TableColumn prix;
     
+     int ID;
      ProduitControl pc = new ProduitControl();
     String  TypeProduct[]={"Femme","Homme"};;
     ObservableList<String> olType =FXCollections.observableArrayList(TypeProduct);
@@ -136,15 +137,62 @@ public class ProduitControler implements Initializable {
           
           pc.insert(product);
           
-          reference.setText("");
-          nom.setText("");
-          marque.setText("");
-          categorie.setText("");
-          prix.setText("");
+          textReference.setText("");
+          textNom.setText("");
+          textMarque.setText("");
+          textCategorie.setText("");
+          textPrix.setText("");
           
           table.setItems(pc.getAllProduct());
           }
           
         }
-    
+        
+                
+        public void Update(Event e)
+        {
+          Produit product = new Produit();
+          if(!textReference.getText().equals("")&&!textNom.getText().equals("")&&!textMarque.getText().equals("")&&!textCategorie.getText().equals("")&&!textPrix.getText().equals("")){
+          product.setReference_produit(Integer.parseInt(textReference.getText()));
+          product.setNom_produit(textNom.getText());
+          product.setMarque_produit(textMarque.getText());
+          product.setCategorie_produit(textCategorie.getText());
+          product.setSexe(textSexe.getValue().toString());
+          product.setPrix_produit(Float.parseFloat(textPrix.getText()));
+          product.setId_produit(ID);
+          
+          pc.update(product);
+          
+          textReference.setText("");
+          textNom.setText("");
+          textMarque.setText("");
+          textCategorie.setText("");
+          textPrix.setText("");
+          table.setItems(pc.getAllProduct());
+          }          
+        }
+        
+               public void Delete(Event e)
+        {
+          pc.delete(ID);
+          textReference.setText("");
+          textNom.setText("");
+          textMarque.setText("");
+          textCategorie.setText("");
+          textPrix.setText("");
+          table.setItems(pc.getAllProduct());
+                
+        }
+        
+     public void clickTable(Event e) 
+        {
+           Produit product =  (Produit) table.getSelectionModel().getSelectedItem();
+           textNom.setText(product.getNom_produit()+"");
+           textReference.setText(product.getReference_produit()+"");
+           textMarque.setText(product.getMarque_produit()+"");
+           textCategorie.setText(product.getCategorie_produit()+"");
+           textPrix.setText(product.getPrix_produit()+"");
+
+           ID=product.getId_produit();
+        }
 }

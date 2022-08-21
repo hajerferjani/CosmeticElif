@@ -75,7 +75,8 @@ public class ProduitControl {
     {
         try {
             state = ConnectionDB.openConnection().createStatement();
-            state.executeUpdate("UPDATE produit set   `reference_produit` = "+product.getReference_produit() +", `nom_produit` = " + product.getNom_produit() +", `marque_produit` = "+"'"+product.getMarque_produit()+"'"+", `categorie_produit` = "+product.getCategorie_produit()+", `sexe` = "+product.getSexe()+", `prix_produit` = "+product.getPrix_produit()+" WHERE id_produit = "+product.getId_produit() );
+
+            state.executeUpdate("UPDATE produit set   `reference_produit` = " +"'"+product.getReference_produit()+"'" +", `nom_produit` = " +"'"+ product.getNom_produit()+"'" +", `marque_produit` = "+"'"+product.getMarque_produit()+"'"+", `categorie_produit` = "+"'"+product.getCategorie_produit()+"'"+", `sexe` = "+"'"+product.getSexe()+"'"+", `prix_produit` =  "+"'"+product.getPrix_produit()+"'"+" WHERE id_produit = "+product.getId_produit() );
             ConnectionDB.closeConnection();
         } catch (SQLException ex) {
             Logger.getLogger(ProduitControl.class.getName()).log(Level.SEVERE, null, ex);

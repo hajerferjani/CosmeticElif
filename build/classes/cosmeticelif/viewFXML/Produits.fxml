@@ -13,7 +13,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cosmeticelif.vControl.ProduitControler">
  
-   <TableView fx:id="table" layoutX="17.0" layoutY="332.0" prefHeight="210.0" prefWidth="748.0">
+   <TableView fx:id="table" layoutX="17.0" layoutY="332.0" onMouseClicked="#clickTable" prefHeight="210.0" prefWidth="748.0">
         <columns>
           <TableColumn id="id" fx:id="id" prefWidth="47.0" text="ID" />
           <TableColumn id="reference" fx:id="reference" prefWidth="123.0" text="Reference" />
@@ -28,11 +28,11 @@
       <cursor>
          <Cursor fx:constant="HAND" />
       </cursor></Button>
-      <Button fx:id="bmodifier" layoutX="79.0" layoutY="293.0" mnemonicParsing="false" text="Modifier">
+      <Button fx:id="bmodifier" layoutX="79.0" layoutY="293.0" mnemonicParsing="false" onAction="#Update" text="Modifier">
       <cursor>
          <Cursor fx:constant="HAND" />
       </cursor></Button>
-      <Button fx:id="bsupprimer" layoutX="146.0" layoutY="293.0" mnemonicParsing="false" text="Supprimer">
+      <Button fx:id="bsupprimer" layoutX="146.0" layoutY="293.0" mnemonicParsing="false" onAction="#Delete" text="Supprimer">
       <cursor>
          <Cursor fx:constant="HAND" />
       </cursor></Button> 
@@ -59,11 +59,10 @@
                </image>
             </ImageView>
       </children></Pane>
-   <ComboBox fx:id="textSexe" layoutX="401.0" layoutY="133.0" prefHeight="25.0" prefWidth="92.0" promptText="Sexe" />
-   <TextField fx:id="textId" layoutX="45.0" layoutY="93.0" prefHeight="44.0" prefWidth="169.0" promptText="ID Produit" />
-   <TextField fx:id="textNom" layoutX="222.0" layoutY="93.0" prefHeight="44.0" prefWidth="169.0" promptText="Nom Produit" />
-   <TextField fx:id="textReference" layoutX="45.0" layoutY="150.0" prefHeight="50.0" prefWidth="169.0" promptText="Reference Produit" />
-   <TextField fx:id="textMarque" layoutX="222.0" layoutY="150.0" prefHeight="50.0" prefWidth="169.0" promptText="Marque Produit" />
-   <TextField fx:id="textCategorie" layoutX="401.0" layoutY="93.0" prefHeight="33.0" prefWidth="169.0" promptText="Categorie Produit" />
-   <TextField fx:id="textPrix" layoutX="401.0" layoutY="167.0" prefHeight="33.0" prefWidth="169.0" promptText="Prix Produit" />
+   <ComboBox fx:id="textSexe" layoutX="400.0" layoutY="91.0" prefHeight="44.0" prefWidth="125.0" promptText="Sexe" />
+   <TextField fx:id="textNom" layoutX="45.0" layoutY="142.0" prefHeight="44.0" prefWidth="169.0" promptText="Nom Produit" />
+   <TextField fx:id="textReference" layoutX="45.0" layoutY="85.0" prefHeight="50.0" prefWidth="169.0" promptText="Reference Produit" />
+   <TextField fx:id="textMarque" layoutX="218.0" layoutY="85.0" prefHeight="50.0" prefWidth="169.0" promptText="Marque Produit" />
+   <TextField fx:id="textCategorie" layoutX="218.0" layoutY="142.0" prefHeight="44.0" prefWidth="169.0" promptText="Categorie Produit" />
+   <TextField fx:id="textPrix" layoutX="391.0" layoutY="142.0" prefHeight="44.0" prefWidth="169.0" promptText="Prix Produit" />
 </AnchorPane>
