@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="CosmeticElif.jar" size="761150" download="eager" />
+    <jar href="CosmeticElif.jar" size="761156" download="eager" />
     <jar href="lib\mysql-connector-java-5.1.15-bin.jar" size="785998" download="eager" />
   </resources>
   <jfx:javafx-desc  width="800" height="600" main-class="cosmeticelif.CosmeticElif"  name="CosmeticElif" />

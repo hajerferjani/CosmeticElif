@@ -19,7 +19,7 @@ import java.util.logging.Logger;
     
         
     private static Connection con ;
-    private static String url="jdbc:mysql://localhost:3306/projet";
+    private static String url="jdbc:mysql://localhost:3306/gestionmagasin";
 
     private ConnectionDB() {
         

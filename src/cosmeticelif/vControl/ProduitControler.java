@@ -93,7 +93,6 @@ public class ProduitControler implements Initializable {
         categorie.setCellValueFactory(new PropertyValueFactory<>("categorie_produit"));
         sexe.setCellValueFactory(new PropertyValueFactory<>("sexe"));
         prix.setCellValueFactory(new PropertyValueFactory<>("prix_produit"));
-
         table.setItems(pc.getAllProduct());
         textSexe.getItems().addAll(olType);
 
