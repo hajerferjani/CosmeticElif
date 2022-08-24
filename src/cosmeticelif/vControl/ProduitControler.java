@@ -29,7 +29,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author USER
+ * @author USER nassim
  */
 public class ProduitControler implements Initializable {
     
