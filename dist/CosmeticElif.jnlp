@@ -8,12 +8,9 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="CosmeticElif.jar" size="849888" download="eager" />
+    <jar href="CosmeticElif.jar" size="852610" download="eager" />
     <jar href="lib\mysql-connector-java-5.1.15-bin.jar" size="785998" download="eager" />
   </resources>
-  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="CosmeticElif" >
-    <param name="requiredFXVersion" value="8.0+"/>
-  </applet-desc>
   <jfx:javafx-desc  width="800" height="600" main-class="cosmeticelif.CosmeticElif"  name="CosmeticElif" />
   <update check="always"/>
 </jnlp>

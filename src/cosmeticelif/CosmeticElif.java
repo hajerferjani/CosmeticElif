@@ -4,6 +4,7 @@
  */
 package cosmeticelif;
 import cosmeticelif.model.Produit;
+import javafx.scene.image.Image;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -29,6 +30,8 @@ public class CosmeticElif extends Application {
          
             Parent root = FXMLLoader.load(getClass().getResource("/cosmeticelif/viewFXML/loginForm.fxml"));
             Scene scene = new Scene(root);
+            //stage.getIcons().add(new Image("/images/h.png"));
+            stage.setTitle("Elif Cosmetic");
             stage.setScene(scene);
             stage.show();
       } 

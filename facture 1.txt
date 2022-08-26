@@ -1,0 +1,10 @@
+*****************************Facture******************************
+Nom du Produit : null
+Prix du Produit : 
+Categories Du Produit : 
+--------------------------------------
+Nom du Produit : mascara
+Prix du Produit : 7.5
+Categories Du Produit : dddd
+--------------------------------------
+
