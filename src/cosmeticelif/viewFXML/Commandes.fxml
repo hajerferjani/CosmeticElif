@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="593.0" prefWidth="1070.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cosmeticelif.vControl.CommandesController">
+   <children>
+      <TableView fx:id="table" layoutX="383.0" layoutY="251.0" onMouseClicked="#clickTable" prefHeight="327.0" prefWidth="672.0">
+        <columns>
+          <TableColumn fx:id="id" prefWidth="81.0" text="ID" />
+          <TableColumn fx:id="fournisseur" prefWidth="85.0" text="Fournisseur" />
+            <TableColumn fx:id="article" prefWidth="96.0" text="Article" />
+            <TableColumn fx:id="quantite" prefWidth="82.0" text="Quantité" />
+            <TableColumn fx:id="total" prefWidth="107.0" text="Prix Total" />
+            <TableColumn fx:id="unitaire" prefWidth="99.0" text="Prix Unitaire" />
+            <TableColumn fx:id="date" prefWidth="128.0" text="Date Commande" />
+        </columns>
+      </TableView>
+      <Pane layoutX="5.0" layoutY="252.0" prefHeight="327.0" prefWidth="377.0" style="-fx-background-color: #F08080;">
+         <children>
+            <TextField fx:id="txtFourn" layoutX="14.0" layoutY="23.0" prefHeight="35.0" prefWidth="162.0" promptText="Fournisseur">
+               <font>
+                  <Font name="System Italic" size="18.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtArticle" layoutX="182.0" layoutY="23.0" prefHeight="35.0" prefWidth="162.0" promptText="Article">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtTotal" layoutX="182.0" layoutY="104.0" prefHeight="35.0" prefWidth="162.0" promptText="Prix Total">
+               <font>
+                  <Font name="System Italic" size="18.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtUnitaire" layoutX="14.0" layoutY="104.0" prefHeight="35.0" prefWidth="162.0" promptText="Prix Unitaire">
+               <font>
+                  <Font name="System Italic" size="18.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtQuantite" layoutX="95.0" layoutY="185.0" prefHeight="35.0" prefWidth="162.0" promptText="Quantité">
+               <font>
+                  <Font name="System Italic" size="18.0" />
+               </font>
+            </TextField>
+            <Button fx:id="btnAjouter" layoutX="88.0" layoutY="281.0" mnemonicParsing="false" onAction="#Ajout" prefHeight="39.0" prefWidth="177.0" text="Ajouter">
+               <font>
+                  <Font name="System Bold Italic" size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Pane>
+      <Pane layoutX="382.0" layoutY="146.0" prefHeight="85.0" prefWidth="672.0" style="-fx-background-color: #F08080;">
+         <children>
+            <Button layoutX="496.0" layoutY="23.0" mnemonicParsing="false" onAction="#Retour" prefHeight="39.0" prefWidth="162.0" text="Retour">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="btnModifier" layoutX="14.0" layoutY="23.0" mnemonicParsing="false" onAction="#Update" prefHeight="39.0" prefWidth="162.0" text="Modifier">
+               <font>
+                  <Font name="System Bold Italic" size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnSupprimer" layoutX="255.0" layoutY="23.0" mnemonicParsing="false" onAction="#Supprime" prefHeight="39.0" prefWidth="162.0" text="Supprimer">
+               <font>
+                  <Font name="System Bold Italic" size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </Pane>
+      <ImageView fitHeight="251.0" fitWidth="377.0" layoutX="7.0" pickOnBounds="true">
+         <image>
+            <Image url="@../image/cmdddd.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="465.0" layoutY="47.0" prefHeight="74.0" prefWidth="552.0" text="Gestion Des Commandes">
+         <font>
+            <Font name="System Bold Italic" size="47.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
