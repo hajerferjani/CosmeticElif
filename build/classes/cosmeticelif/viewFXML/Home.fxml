@@ -17,7 +17,7 @@
             <Cursor fx:constant="HAND" />
          </cursor></Button>
       <Label layoutX="463.0" layoutY="93.0" prefHeight="17.0" prefWidth="62.0" text="Commande" textAlignment="CENTER" />
-      <Button fx:id="b_stock" layoutX="257.0" layoutY="78.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="118.0" style="-fx-background-color: #d4beb9;" styleClass="button2" stylesheets="@../Stylee1.css" />
+      <Button fx:id="b_stock" layoutX="257.0" layoutY="78.0" mnemonicParsing="false" onAction="#openStock" prefHeight="46.0" prefWidth="118.0" style="-fx-background-color: #d4beb9;" styleClass="button2" stylesheets="@../Stylee1.css" />
       <Label layoutX="134.0" layoutY="92.0" prefHeight="17.0" prefWidth="41.0" text="Poduits" textAlignment="CENTER" textFill="#212221" />
       <Label layoutX="317.0" layoutY="93.0" text="Stock" />
       <Button fx:id="b_commande11" layoutX="257.0" layoutY="158.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="126.0" style="-fx-background-color: #d4beb9;" styleClass="button2" stylesheets="@../Stylee1.css" />
@@ -59,7 +59,7 @@
             <Image url="@../image/commande.png" />
          </image>
       </ImageView>
-      <Button fx:id="b_commande111" layoutX="417.0" layoutY="158.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="118.0" style="-fx-background-color: #d4beb9;" styleClass="button2" stylesheets="@../Stylee1.css" />
+      <Button fx:id="b_fournisseur" layoutX="417.0" layoutY="158.0" mnemonicParsing="false" onAction="#openFournisseur" prefHeight="46.0" prefWidth="118.0" style="-fx-background-color: #d4beb9;" styleClass="button2" stylesheets="@../Stylee1.css" />
       <ImageView fitHeight="34.0" fitWidth="62.0" layoutX="423.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../image/fournisseur.png" />

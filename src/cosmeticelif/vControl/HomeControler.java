@@ -25,6 +25,10 @@ public class HomeControler {
  private Button b_stock;
  @FXML 
  private Button b_commande;
+ @FXML
+ private Button b_fournisseur;
+ @FXML 
+
 
  
  public void openProduits(Event e)
@@ -75,6 +79,23 @@ public class HomeControler {
                    stage.close();
                    
                    Parent root = FXMLLoader.load(getClass().getResource("/cosmeticelif/viewFXML/Commandes.fxml"));       
+                   Scene scene = new Scene(root);       
+                   stage.setScene(scene);
+                   stage.show();
+
+                } catch (Exception ex) {
+                    System.out.println("y"+ex.getMessage());
+                }
+ }
+   public void openStock(Event e)
+ {
+      try {
+                    //add you loading or delays - ;-)
+                   Node node = (Node) e.getSource();
+                   Stage stage = (Stage) node.getScene().getWindow();                  
+                   stage.close();
+                   
+                   Parent root = FXMLLoader.load(getClass().getResource("/cosmeticelif/viewFXML/Stocks.fxml"));       
                    Scene scene = new Scene(root);       
                    stage.setScene(scene);
                    stage.show();
