@@ -25,10 +25,6 @@ public class HomeControler {
  private Button b_stock;
  @FXML 
  private Button b_commande;
- @FXML
- private Button b_fournisseur;
- @FXML 
-
 
  
  public void openProduits(Event e)
@@ -45,7 +41,7 @@ public class HomeControler {
                    stage.show();
 
                 } catch (Exception ex) {
-                    System.out.println("y"+ex.getMessage());
+                    System.out.println("exception on open produit"+ex.getMessage());
                 }
  }
     
@@ -65,7 +61,7 @@ public class HomeControler {
                    stage.show();
 
                 } catch (Exception ex) {
-                    System.out.println("y"+ex.getMessage());
+                    System.out.println("exception on open fournisseur"+ex.getMessage());
                 }
  }
 
@@ -84,10 +80,27 @@ public class HomeControler {
                    stage.show();
 
                 } catch (Exception ex) {
-                    System.out.println("y"+ex.getMessage());
+                    System.out.println("exception on open commande"+ex.getMessage());
                 }
  }
-   public void openStock(Event e)
+  public void openFacture(Event e)
+ {
+      try {
+                    //add you loading or delays - ;-)
+                   Node node = (Node) e.getSource();
+                   Stage stage = (Stage) node.getScene().getWindow();                  
+                   stage.close();
+                   
+                   Parent root = FXMLLoader.load(getClass().getResource("/cosmeticelif/viewFXML/Facture.fxml"));       
+                   Scene scene = new Scene(root);       
+                   stage.setScene(scene);
+                   stage.show();
+
+                } catch (Exception ex) {
+                    System.out.println("exception on open facture"+ex.getMessage());
+                }
+ }
+  public void openStock(Event e)
  {
       try {
                     //add you loading or delays - ;-)
@@ -101,7 +114,7 @@ public class HomeControler {
                    stage.show();
 
                 } catch (Exception ex) {
-                    System.out.println("y"+ex.getMessage());
+                    System.out.println("exception on open stock"+ex.getMessage());
                 }
  }
 }
