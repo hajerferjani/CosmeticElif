@@ -5,8 +5,6 @@
 package cosmeticelif.vControl;
 
 import cosmeticelif.Controller.StockControl;
-import cosmeticelif.model.Commandes;
-import cosmeticelif.model.Produit;
 import cosmeticelif.model.Stocks;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -69,8 +67,7 @@ public class StocksController implements Initializable {
     /**
      * Initializes the controller class.
      */
-    int ID;
-    StockControl stk = new StockControl();
+    StockControl st = new StockControl();
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         //--------------------------------------------------------------------------
@@ -81,14 +78,14 @@ public class StocksController implements Initializable {
          date_st.setCellValueFactory(new PropertyValueFactory<>("date_entree"));
          prix_unit_st.setCellValueFactory(new PropertyValueFactory<>("prix_unit"));
          prix_vente_st.setCellValueFactory(new PropertyValueFactory<>("prix_vente"));
-         table.setItems(stk.getAllStocks());
+         table.setItems(st.getAllStocks());
         
           //-----------------------------------------------------------------------------------------
      
       
     
 }
-     public void Back(Event e)
+    public void Back(Event e)
  {
       try {
                     //add you loading or delays - ;-)
@@ -105,82 +102,6 @@ public class StocksController implements Initializable {
                     System.out.println("y"+ex.getMessage());
                 }
  }
-     public void Add(Event e)
-        {
-          Stocks st = new Stocks();
-          if(!txt_ref.getText().equals("")&&!txt_fourni.getText().equals("")&&!txt_quantite.getText().equals("")&&!txt_p_unit.getText().equals("")&&!txt_p_vente.getText().equals("")){
-          st.setReference((txt_ref.getText()));
-          st.setFournisseur(txt_fourni.getText());
-          st.setQuantite(Integer.parseInt(txt_quantite.getText()));
-          st.setPrix_unit(Float.parseFloat(txt_p_unit.getText()));
-          st.setPrix_vente(Float.parseFloat(txt_p_vente.getText()));
-          
-          stk.insert(st);
-          
-          txt_ref.setText("");
-          txt_fourni.setText("");
-          txt_quantite.setText("");
-          txt_p_unit.setText("");
-          txt_p_vente.setText("");
-          
-          table.setItems(stk.getAllStocks());
-          }
-          
-        }
-     
-        public void Update(Event e)
-        {
-           Stocks st = new Stocks();
-          if(!txt_ref.getText().equals("")&&!txt_fourni.getText().equals("")&&!txt_quantite.getText().equals("")&&!txt_p_unit.getText().equals("")&&!txt_p_vente.getText().equals("")){
-           st.setReference((txt_ref.getText()));
-          st.setFournisseur(txt_fourni.getText());
-          st.setQuantite(Integer.parseInt(txt_quantite.getText()));
-          st.setPrix_unit(Float.parseFloat(txt_p_unit.getText()));
-          st.setPrix_vente(Float.parseFloat(txt_p_vente.getText()));
-         
-         
-          st.setId(ID);
-          
-         stk.update(st);
-          
-         txt_ref.setText("");
-          txt_fourni.setText("");
-          txt_quantite.setText("");
-          txt_p_unit.setText("");
-          txt_p_vente.setText("");
-        
-         table.setItems(stk.getAllStocks());
-          }          
-        }
-        
-      
-      
-     public void Supprime(Event e)
-        {
-         stk.delete(ID);
-         txt_ref.setText("");
-          txt_fourni.setText("");
-          txt_quantite.setText("");
-          txt_p_unit.setText("");
-          txt_p_vente.setText("");
-        
-          table.setItems(stk.getAllStocks());
-                
-        }
-         public void clickTable(Event e) 
-        {
-          Stocks st = (Stocks) table.getSelectionModel().getSelectedItem();
-          txt_ref.setText(st.getReference()+"");
-          txt_fourni.setText(st.getFournisseur()+"");
-          txt_quantite.setText(st.getQuantite()+"");
-          txt_p_unit.setText(st.getPrix_unit()+"");
-          txt_p_vente.setText(st.getPrix_vente()+"");
-         
-
-           ID=st.getId();
-        }
-     
-        
 
 }
 
