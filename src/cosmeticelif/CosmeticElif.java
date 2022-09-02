@@ -30,8 +30,8 @@ public class CosmeticElif extends Application {
          
             Parent root = FXMLLoader.load(getClass().getResource("/cosmeticelif/viewFXML/loginForm.fxml"));
             Scene scene = new Scene(root);
-            //stage.getIcons().add(new Image("/images/h.png"));
-            //stage.setTitle("Elif Cosmetic");
+            stage.getIcons().add(new Image("/cosmeticelif/image/istockphoto.jpg"));
+            stage.setTitle("Elif Cosmetic");
             stage.setScene(scene);
             stage.show();
       } 
