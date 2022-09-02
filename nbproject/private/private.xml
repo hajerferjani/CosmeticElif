@@ -6,9 +6,14 @@
         <group>
             <file>file:/C:/Users/USER/Desktop/cosmetic/CosmeticElif/src/cosmeticelif/Controller/StockControl.java</file>
             <file>file:/C:/Users/USER/Desktop/cosmetic/CosmeticElif/src/cosmeticelif/vControl/StocksController.java</file>
+            <file>file:/C:/Users/USER/Desktop/cosmetic/CosmeticElif/src/cosmeticelif/Controller/LoginControl.java</file>
+            <file>file:/C:/Users/USER/Desktop/cosmetic/CosmeticElif/src/cosmeticelif/vControl/HomeMagazinierControler.java</file>
             <file>file:/C:/Users/USER/Desktop/cosmetic/CosmeticElif/src/cosmeticelif/vControl/HomeControler.java</file>
             <file>file:/C:/Users/USER/Desktop/cosmetic/CosmeticElif/src/cosmeticelif/vControl/login.java</file>
+            <file>file:/C:/Users/USER/Desktop/cosmetic/CosmeticElif/src/cosmeticelif/viewFXML/HomeMagazinier.fxml</file>
+            <file>file:/C:/Users/USER/Desktop/cosmetic/CosmeticElif/src/cosmeticelif/viewFXML/Home.fxml</file>
             <file>file:/C:/Users/USER/Desktop/cosmetic/CosmeticElif/src/cosmeticelif/CosmeticElif.java</file>
+            <file>file:/C:/Users/USER/Desktop/cosmetic/CosmeticElif/src/cosmeticelif/Controller/FournisseurControl.java</file>
         </group>
     </open-files>
 </project-private>

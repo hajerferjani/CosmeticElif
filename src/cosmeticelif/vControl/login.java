@@ -35,22 +35,36 @@ public class login {
     
     User user = new User();
     LoginControl lc= new LoginControl();
-    
+    //cosmeticelif/viewFXML/Home.fxml
     @FXML
     public void isSign(Event event) throws IOException {
         user.setLogin(login.getText());
         user.setMot_de_passe(password.getText());
         
-           if (lc.isLogin(user)) {
-               Node node = (Node) event.getSource();
+              if (lc.isLogin(user)) {
+                try {
+                    //add you loading or delays - ;-)
+                    Node node = (Node) event.getSource();
                     Stage stage = (Stage) node.getScene().getWindow();                  
                     stage.close();
+                   if(lc.getRole().equals("admin")){
                    Parent root = FXMLLoader.load(getClass().getResource("/cosmeticelif/viewFXML/Home.fxml"));       
                    Scene scene = new Scene(root);       
                    stage.setScene(scene);
                    stage.show();
-           }
+                   }
+                   else{
+                   Parent root = FXMLLoader.load(getClass().getResource("/cosmeticelif/viewFXML/HomeMagazinier.fxml"));       
+                   Scene scene = new Scene(root);       
+                   stage.setScene(scene);
+                   stage.show();
+                   }
+                } catch (Exception ex) {
+                    System.out.println("y"+ex.getMessage());
+                }
+                
+            }
            else
                 mesg.setText("login or password is wrong");
-    }
+  }          
 }

@@ -20,7 +20,7 @@ import java.sql.Statement;
 public class LoginControl {
     
          Statement st;
-         String type;
+         String role;
          
         public  boolean isLogin(User u ){
            
@@ -31,7 +31,7 @@ public class LoginControl {
             String check="select * from user where login ='"+u.getLogin()+"' and mot_de_passe = '"+u.getMot_de_passe()+"'";
             ResultSet result =  st.executeQuery(check);
             while(result.next()){
-                type=result.getString(3);
+                role=result.getString(7);
                 return true;
             }
              ConnectionDB.closeConnection();
@@ -46,12 +46,13 @@ public class LoginControl {
   
     public String getRole(){
         
-        if(type.equals("admin"))
+        if(role.equals("admin"))
             return "admin";
         else
             return "magasinier";
     }
-   
+
+  
 
     
 }
