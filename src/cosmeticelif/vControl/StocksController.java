@@ -32,19 +32,19 @@ public class StocksController implements Initializable {
     @FXML
     private TableView<Stocks> table;
     @FXML
-    private TableColumn<?, ?> id_s;
+    private TableColumn id_s;
     @FXML
-    private TableColumn<?, ?> ref_st;
+    private TableColumn ref_st;
     @FXML
-    private TableColumn<?, ?> fourni;
+    private TableColumn fourni;
     @FXML
-    private TableColumn<?, ?> qte_st;
+    private TableColumn qte_st;
     @FXML
-    private TableColumn<?, ?> date_st;
+    private TableColumn date_st;
     @FXML
-    private TableColumn<?, ?> prix_unit_st;
+    private TableColumn prix_unit_st;
     @FXML
-    private TableColumn<?, ?> prix_vente_st;
+    private TableColumn prix_vente_st;
     @FXML
     private Button btn_ajuter;
     @FXML
@@ -67,18 +67,18 @@ public class StocksController implements Initializable {
     /**
      * Initializes the controller class.
      */
-    StockControl st = new StockControl();
+    int ID;
+    StockControl stk = new StockControl();
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         //--------------------------------------------------------------------------
-         id_s.setCellValueFactory(new PropertyValueFactory<>("id_stock"));
+         id_s.setCellValueFactory(new PropertyValueFactory<>("id"));
          ref_st.setCellValueFactory(new PropertyValueFactory<>("reference"));
          fourni.setCellValueFactory(new PropertyValueFactory<>("fournisseur"));
          qte_st.setCellValueFactory(new PropertyValueFactory<>("quantite"));
-         date_st.setCellValueFactory(new PropertyValueFactory<>("date_entree"));
          prix_unit_st.setCellValueFactory(new PropertyValueFactory<>("prix_unit"));
          prix_vente_st.setCellValueFactory(new PropertyValueFactory<>("prix_vente"));
-         table.setItems(st.getAllStocks());
+         table.setItems(stk.getAllStocks());
         
           //-----------------------------------------------------------------------------------------
      
@@ -99,9 +99,77 @@ public class StocksController implements Initializable {
                    stage.show();
 
                 } catch (Exception ex) {
-                    System.out.println("y"+ex.getMessage());
+                    System.out.println("exception dans method back"+ex.getMessage());
                 }
  }
+      public void Add(Event e)
+        {
+          Stocks st = new Stocks();
+          if(!txt_ref.getText().equals("")&&!txt_fourni.getText().equals("")&&!txt_quantite.getText().equals("")&&!txt_p_unit.getText().equals("")&&!txt_p_vente.getText().equals("")){
+          st.setReference((txt_ref.getText()));
+          st.setFournisseur(txt_fourni.getText());
+          st.setQuantite(Integer.parseInt(txt_quantite.getText()));
+          st.setPrix_unit(Float.parseFloat(txt_p_unit.getText()));
+          st.setPrix_vente(Float.parseFloat(txt_p_vente.getText()));
+          
+          stk.insert(st);
+          
+          txt_ref.setText("");
+          txt_fourni.setText("");
+          txt_quantite.setText("");
+          txt_p_unit.setText("");
+          txt_p_vente.setText("");
+          
+          table.setItems(stk.getAllStocks());
+          }
+          
+        }
+      public void Update(Event e)
+        {
+           Stocks st = new Stocks();
+          if(!txt_ref.getText().equals("")&&!txt_fourni.getText().equals("")&&!txt_quantite.getText().equals("")&&!txt_p_unit.getText().equals("")&&!txt_p_vente.getText().equals("")){
+          st.setReference((txt_ref.getText()));
+          st.setFournisseur(txt_fourni.getText());
+          st.setQuantite(Integer.parseInt(txt_quantite.getText()));
+          st.setPrix_unit(Float.parseFloat(txt_p_unit.getText()));
+          st.setPrix_vente(Float.parseFloat(txt_p_vente.getText()));
+          
+          stk.update(st);
+          
+          txt_ref.setText("");
+          txt_fourni.setText("");
+          txt_quantite.setText("");
+          txt_p_unit.setText("");
+          txt_p_vente.setText("");
+          
+          table.setItems(stk.getAllStocks());
+          }          
+        }
+       public void Delete(Event e)
+        {
+          stk.delete(ID);
+          
+          txt_ref.setText("");
+          txt_fourni.setText("");
+          txt_quantite.setText("");
+          txt_p_unit.setText("");
+          txt_p_vente.setText("");
+          
+         table.setItems(stk.getAllStocks());
+                
+        }
+       public void clickTable(Event e) 
+        {
+           Stocks st =  (Stocks) table.getSelectionModel().getSelectedItem();
+           st.setReference((txt_ref.getText()+""));
+          st.setFournisseur(txt_fourni.getText()+"");
+          st.setQuantite(Integer.parseInt(txt_quantite.getText()+""));
+          st.setPrix_unit(Float.parseFloat(txt_p_unit.getText()+""));
+          st.setPrix_vente(Float.parseFloat(txt_p_vente.getText()+""));
+           
+           ID=st.getId();
+        }
+
 
 }
 

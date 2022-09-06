@@ -8,22 +8,21 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="581.0" prefWidth="777.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cosmeticelif.vControl.StocksController">
+<AnchorPane id="AnchorPane" prefHeight="581.0" prefWidth="777.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cosmeticelif.vControl.StocksController">
    <children>
       <TableView fx:id="table" layoutX="7.0" layoutY="73.0" prefHeight="238.0" prefWidth="764.0">
         <columns>
           <TableColumn fx:id="id_s" prefWidth="75.0" text="id" />
           <TableColumn fx:id="ref_st" prefWidth="75.0" text="refrence" />
             <TableColumn fx:id="fourni" prefWidth="153.0" text="fournisseur" />
-            <TableColumn fx:id="qte_st" prefWidth="74.0" text="quantite" />
-            <TableColumn fx:id="date_st" prefWidth="118.0" text="date_entree" />
-            <TableColumn fx:id="prix_unit_st" prefWidth="146.0" text="prix unitaire" />
-            <TableColumn fx:id="prix_vente_st" prefWidth="122.0" text="prix vente" />
+            <TableColumn fx:id="qte_st" prefWidth="110.0" text="quantite" />
+            <TableColumn fx:id="prix_unit_st" prefWidth="145.0" text="prix unitaire" />
+            <TableColumn fx:id="prix_vente_st" prefWidth="147.0" text="prix vente" />
         </columns>
       </TableView>
-      <Button fx:id="btn_ajuter" layoutX="27.0" layoutY="334.0" mnemonicParsing="false" text="Ajouter" />
-      <Button fx:id="btn_modifier" layoutX="95.0" layoutY="334.0" mnemonicParsing="false" text="Modifier" />
-      <Button fx:id="btn_supp" layoutX="174.0" layoutY="334.0" mnemonicParsing="false" text="Supprimer" />
+      <Button fx:id="btn_ajuter" layoutX="27.0" layoutY="334.0" mnemonicParsing="false" onAction="#Add" text="Ajouter" />
+      <Button fx:id="btn_modifier" layoutX="95.0" layoutY="334.0" mnemonicParsing="false" onAction="#Update" text="Modifier" />
+      <Button fx:id="btn_supp" layoutX="174.0" layoutY="334.0" mnemonicParsing="false" onAction="#Delete" text="Supprimer" />
       <Button fx:id="retour" layoutX="28.0" layoutY="533.0" mnemonicParsing="false" onAction="#Back" text="Retour" />
       <ImageView fitHeight="118.0" fitWidth="144.0" layoutX="637.0" layoutY="440.0" pickOnBounds="true" preserveRatio="true">
          <image>

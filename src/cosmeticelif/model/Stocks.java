@@ -16,19 +16,17 @@ public class Stocks {
     private String reference;
     private String fournisseur;
     private int quantite;
-    private Date date_entree;
     private float prix_unit;
     private float prix_vente;
 
     public Stocks() {
     }
 
-    public Stocks(int id, String reference, String fournisseur, int quantite, Date date_entree, float prix_unit, float prix_vente) {
+    public Stocks(int id, String reference, String fournisseur, int quantite, float prix_unit, float prix_vente) {
         this.id = id;
         this.reference = reference;
         this.fournisseur = fournisseur;
         this.quantite = quantite;
-        this.date_entree = date_entree;
         this.prix_unit = prix_unit;
         this.prix_vente = prix_vente;
     }
@@ -67,14 +65,6 @@ public class Stocks {
         this.quantite = quantite;
     }
 
-    public Date getDate_entree() {
-        return date_entree;
-    }
-
-    public void setDate_entree(Date date_entree) {
-        this.date_entree = date_entree;
-    }
-
     public float getPrix_unit() {
         return prix_unit;
     }
@@ -90,6 +80,9 @@ public class Stocks {
     public void setPrix_vente(float prix_vente) {
         this.prix_vente = prix_vente;
     }
+
+
+   
 
     
 

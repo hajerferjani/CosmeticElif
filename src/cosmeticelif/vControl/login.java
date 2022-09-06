@@ -60,7 +60,7 @@ public class login {
                    stage.show();
                    }
                 } catch (Exception ex) {
-                    System.out.println("y"+ex.getMessage());
+                    System.out.println("exception on islogin"+ex.getMessage());
                 }
                 
             }
