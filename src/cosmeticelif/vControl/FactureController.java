@@ -4,10 +4,16 @@
  */
 package cosmeticelif.vControl;
 
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
 import cosmeticelif.Controller.FactureControl;
 import cosmeticelif.model.Produit;
+import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.PrintWriter;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -61,7 +67,7 @@ public class FactureController implements Initializable {
     
     int numProduct;
     double total=0;
-    int num =0;
+    static int num =0;
     FactureControl SC = new FactureControl();
     Produit pr = new Produit();  
     
@@ -74,21 +80,26 @@ public class FactureController implements Initializable {
     }  
     
      public void Print() {
-
-      
-         
-        try {
-            num++;
-            
-             PrintWriter f = new PrintWriter("Facture "+String.valueOf(num)+".txt");
-             f.println(bill.getText());
-            f.close();
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(FactureController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-                 
-        bill.setText("");
-  
+       
+          try {
+        num++; 
+	Document document = new Document();
+        // cree fichier 
+	OutputStream outputStream = new FileOutputStream(new File("Facture "+String.valueOf(num)+".pdf"));
+ 
+        PdfWriter.getInstance(document, outputStream);
+        //ouvrire fichier
+        document.open();
+        // ajouter contenue fichier
+        document.add(new Paragraph(bill.getText()));
+        // fermer fichier
+        document.close();
+        outputStream.close();
+ 
+        System.out.println("Pdf created successfully."+num);
+    } catch (Exception e) {
+	e.printStackTrace();
+    }
   }
     
      

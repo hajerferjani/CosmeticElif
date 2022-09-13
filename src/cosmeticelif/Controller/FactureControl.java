@@ -4,6 +4,8 @@
  */
 package cosmeticelif.Controller;
 
+import cosmeticelif.Controller.ConnectionDB;
+import cosmeticelif.Controller.ProduitControl;
 import cosmeticelif.model.Produit;
 import java.sql.ResultSet;
 import java.sql.SQLException;

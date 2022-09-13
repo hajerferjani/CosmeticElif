@@ -4,16 +4,18 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group name="Group 20210520-10:23:39"/>
         <group>
-            <file>file:/C:/Users/USER/Desktop/cosmetic/CosmeticElif/src/cosmeticelif/Controller/StockControl.java</file>
-            <file>file:/C:/Users/USER/Desktop/cosmetic/CosmeticElif/src/cosmeticelif/vControl/StocksController.java</file>
             <file>file:/C:/Users/USER/Desktop/cosmetic/CosmeticElif/src/cosmeticelif/Controller/LoginControl.java</file>
-            <file>file:/C:/Users/USER/Desktop/cosmetic/CosmeticElif/src/cosmeticelif/vControl/HomeMagazinierControler.java</file>
+            <file>file:/C:/Users/USER/Desktop/cosmetic/CosmeticElif/src/cosmeticelif/Controller/FactureControl.java</file>
             <file>file:/C:/Users/USER/Desktop/cosmetic/CosmeticElif/src/cosmeticelif/vControl/HomeControler.java</file>
-            <file>file:/C:/Users/USER/Desktop/cosmetic/CosmeticElif/src/cosmeticelif/vControl/login.java</file>
             <file>file:/C:/Users/USER/Desktop/cosmetic/CosmeticElif/src/cosmeticelif/viewFXML/HomeMagazinier.fxml</file>
-            <file>file:/C:/Users/USER/Desktop/cosmetic/CosmeticElif/src/cosmeticelif/viewFXML/Home.fxml</file>
+            <file>file:/C:/Users/USER/Desktop/cosmetic/CosmeticElif/src/cosmeticelif/vControl/login.java</file>
+            <file>file:/C:/Users/USER/Desktop/cosmetic/CosmeticElif/src/cosmeticelif/Stylee1.css</file>
+            <file>file:/C:/Users/USER/Desktop/cosmetic/CosmeticElif/src/cosmeticelif/vControl/ProduitControler.java</file>
+            <file>file:/C:/Users/USER/Desktop/cosmetic/CosmeticElif/src/cosmeticelif/Controller/ProduitControl.java</file>
+            <file>file:/C:/Users/USER/Desktop/cosmetic/CosmeticElif/src/cosmeticelif/vControl/FactureController.java</file>
+            <file>file:/C:/Users/USER/Desktop/cosmetic/CosmeticElif/src/cosmeticelif/Controller/ConnectionDB.java</file>
             <file>file:/C:/Users/USER/Desktop/cosmetic/CosmeticElif/src/cosmeticelif/CosmeticElif.java</file>
-            <file>file:/C:/Users/USER/Desktop/cosmetic/CosmeticElif/src/cosmeticelif/Controller/FournisseurControl.java</file>
+            <file>file:/C:/Users/USER/Desktop/cosmetic/CosmeticElif/src/cosmeticelif/vControl/CommandesController.java</file>
         </group>
     </open-files>
 </project-private>

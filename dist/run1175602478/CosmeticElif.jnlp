@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="CosmeticElif.jar" size="892088" download="eager" />
+    <jar href="CosmeticElif.jar" size="892116" download="eager" />
     <jar href="lib\itextpdf-5.1.0.jar" size="1614453" download="eager" />
     <jar href="lib\mysql-connector-java-5.1.15-bin.jar" size="785998" download="eager" />
   </resources>
