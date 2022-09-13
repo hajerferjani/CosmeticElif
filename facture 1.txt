@@ -1,0 +1,10 @@
+*****************************  Facture ******************************
+Non Produit : rouge a levre
+Prix Produit : 15.69
+Categorie produit : visage
+--------------------------------------
+Non Produit : mascara
+Prix Produit : 12.5
+Categorie produit : visage
+--------------------------------------
+
