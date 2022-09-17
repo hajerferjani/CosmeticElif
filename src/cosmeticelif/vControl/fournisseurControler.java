@@ -7,8 +7,12 @@ package cosmeticelif.vControl;
 
 import cosmeticelif.Controller.FournisseurControl;
 import cosmeticelif.model.Fournisseur;
+import java.awt.event.ActionEvent;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.Event;
@@ -23,6 +27,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 /**
@@ -47,6 +52,10 @@ public class fournisseurControler implements Initializable
     private Button btnsupprimer ;
     @FXML
     private Button btnretour ;
+     @FXML
+    private Button envoyer;
+   
+    
     @FXML
     private TableView idtable;
     @FXML
@@ -163,7 +172,26 @@ public class fournisseurControler implements Initializable
 
            ID=fourni.getId_fournisseur();
         }
-   
+   @FXML
+    public void Mail (Event e) {
+       
+                   try {
+                    //add you loading or delays - ;-)
+                   Node node = (Node) e.getSource();
+                   Stage stage = (Stage) node.getScene().getWindow();                  
+                   stage.close();
+                   
+                   Parent root = FXMLLoader.load(getClass().getResource("/cosmeticelif/viewFXML/Mail.fxml"));       
+                   Scene scene = new Scene(root);       
+                   stage.setScene(scene);
+                   stage.show();
+
+                } catch (Exception ex) {
+                    System.out.println("y"+ex.getMessage());
+                }
+                 
+
+                }
 }
     
     
