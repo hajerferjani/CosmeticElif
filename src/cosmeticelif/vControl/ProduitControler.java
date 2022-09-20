@@ -21,6 +21,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -73,6 +74,8 @@ public class ProduitControler implements Initializable {
     private TableColumn sexe;
     @FXML
     private TableColumn prix;
+    @FXML
+    private Label mesg;
     
      int ID;
      ProduitControl pc = new ProduitControl();
@@ -144,6 +147,9 @@ public class ProduitControler implements Initializable {
           
           table.setItems(pc.getAllProduct());
           }
+          else
+                mesg.setText("Remplir tous les champs");
+            
           
         }
         

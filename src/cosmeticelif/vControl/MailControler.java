@@ -7,6 +7,8 @@ package cosmeticelif.vControl;
 
 //import java.net.PasswordAuthentication;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,6 +21,7 @@ import javafx.stage.Stage;
 //import sun.plugin2.message.transport.Transport;
 import javax.mail.*;
 import javax.mail.internet.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -59,6 +62,10 @@ public class MailControler {
          
 
 try {
+    
+     if (validateEmail()==false){ 
+               JOptionPane.showMessageDialog(null, "verifier votre adresse mail");
+          }
             Message message = new MimeMessage(s);
             message.setFrom(new InternetAddress(from));
             message.setRecipient(Message.RecipientType.TO, new InternetAddress(destination));
@@ -74,6 +81,18 @@ try {
         
     }
     
+    
+        
+       private boolean validateEmail(){
+       Pattern p=Pattern.compile("[a-zA-Z0-9][a-zA-Z0-9._]*@[a-zA-Z0-9]+([.][a-zA-Z]+)+");
+       Matcher m=p.matcher(dest.getText());
+       if (m.find()&& m.group().equals(dest.getText())){
+          // System.out.println("ok");
+       return true;
+       }
+       // System.out.println("not ok");
+        return false;
+}
           public void Backmail(Event e)
  {
       try {

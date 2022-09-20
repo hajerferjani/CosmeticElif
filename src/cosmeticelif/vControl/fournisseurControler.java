@@ -29,6 +29,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -123,6 +124,9 @@ public class fournisseurControler implements Initializable
           
           idtable.setItems(f.getAllFournisseur());
           }
+          else {
+              JOptionPane.showMessageDialog(null, "Remplir tous les champs");
+         }
             }
        public void update (Event e){
         Fournisseur fourni = new Fournisseur();
